@@ -132,8 +132,8 @@ function HomePage() {
 
 function FilesPage() {
   const googleDriveLinks = [
-    { id: 1, label: 'SIA Files', url: 'https://drive.google.com/drive/folders/your-folder-id-1' },
-    { id: 2, label: 'Technopreneurship Files', url: 'https://drive.google.com/drive/folders/your-folder-id-2' },
+    { id: 1, label: 'SIA Files', url: 'https://drive.google.com/drive/folders/1ZA14u8Ld3rt3fPvw6VhfDgsUjhoUmWZO?usp=drive_link' },
+    { id: 2, label: 'Technopreneurship Files', url: 'https://drive.google.com/drive/folders/18iRs9_YqHW9vu1F4Qz2jUOnQuRHkHw4S?usp=drive_link' },
     { id: 3, label: 'Capstone 1 Files (SOON?!!!)', url: 'https://drive.google.com/drive/folders/your-folder-id-3' }
   ];
 
