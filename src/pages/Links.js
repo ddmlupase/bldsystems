@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Links.css';
 
 function Links() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password === 'bldsystems123') {
+      setIsAuthenticated(true);
+      setError('');
+    } else {
+      setError('Incorrect password. Try again.');
+    }
+  };
+
   const drives = [
     { name: 'Capstone 1', url: 'https://drive.google.com/drive/folders/1Lh9C5C0UoN8n-i9M2tJIAuZZ_jurCFuk?usp=sharing' },
     { name: 'SIA 1', url: 'https://drive.google.com/drive/folders/1ZA14u8Ld3rt3fPvw6VhfDgsUjhoUmWZO?usp=sharing' },
@@ -15,6 +30,35 @@ function Links() {
 
   return (
     <div className="links-page">
+      {!isAuthenticated && (
+        <div className="password-overlay">
+          <div className="password-card">
+            <div className="lock-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="40" height="40">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h2 className="password-title">Enter Password</h2>
+            <p className="password-subtitle">This page is protected. Please enter the password to continue.</p>
+            <form onSubmit={handleSubmit} className="password-form">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => { setPassword(e.target.value); setError(''); }}
+                placeholder="Password"
+                className="password-input"
+                autoFocus
+              />
+              {error && <p className="password-error">{error}</p>}
+              <button type="submit" className="password-button">Unlock</button>
+            </form>
+            <p className="password-goback">Not a member? <Link to="/" className="goback-link">Go back to the homepage</Link></p>
+          </div>
+        </div>
+      )}
+
+      <div className={!isAuthenticated ? 'links-content blurred' : 'links-content'}>
       <section className="links-hero">
         <h1 className="links-title">Links</h1>
         <p className="links-subtitle">Quick access to our shared Google Drives and GitHub repositories.</p>
@@ -66,6 +110,7 @@ function Links() {
           </a>
         ))}
       </section>
+      </div>
     </div>
   );
 }

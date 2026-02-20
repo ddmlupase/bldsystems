@@ -4,6 +4,134 @@
   max-width: 980px;
   margin: 0 auto;
   padding: 0 22px;
+  position: relative;
+}
+
+/* Password Overlay */
+.password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 251, 253, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.password-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.12);
+}
+
+.lock-icon {
+  margin-bottom: 20px;
+}
+
+.password-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.password-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6e6e73;
+  margin-bottom: 28px;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.password-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 1px solid #d2d2d7;
+  border-radius: 12px;
+  outline: none;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.password-input:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.password-input::placeholder {
+  color: #86868b;
+}
+
+.password-error {
+  font-size: 13px;
+  color: #ff3b30;
+  margin: 0;
+}
+
+.password-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background: #0071e3;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.password-button:hover {
+  background: #0077ed;
+}
+
+.password-goback {
+  font-size: 13px;
+  color: #86868b;
+  margin-top: 20px;
+}
+
+.goback-link {
+  color: #0071e3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.goback-link:hover {
+  color: #0077ed;
+  text-decoration: underline;
+}
+
+/* Blurred content */
+.links-content {
+  transition: filter 0.3s ease;
+}
+
+.links-content.blurred {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Hero */
