@@ -1,0 +1,117 @@
+/* ==================== LINKS PAGE ==================== */
+
+.links-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* Hero */
+.links-hero {
+  text-align: center;
+  padding: 120px 0 80px;
+}
+
+.links-title {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.07;
+  color: #1d1d1f;
+  margin-bottom: 20px;
+}
+
+.links-subtitle {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6e6e73;
+}
+
+/* Section Title */
+.links-section-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #1d1d1f;
+  margin-bottom: 32px;
+}
+
+/* Drives Container */
+.drives-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+/* Drive Link */
+.drive-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 40px 36px;
+  background: #ffffff;
+  border-radius: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 180px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.drive-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.drive-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.gdrive-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.drive-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.drive-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #86868b;
+}
+
+/* Responsive */
+@media (max-width: 734px) {
+  .links-title {
+    font-size: 36px;
+  }
+
+  .links-subtitle {
+    font-size: 17px;
+  }
+
+  .drives-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .drive-link {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .links-hero {
+    padding: 80px 0 50px;
+  }
+}
